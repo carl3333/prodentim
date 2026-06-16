@@ -439,6 +439,17 @@
 <div class="sticky-cta">
   <a href="https://9b1d25jdojkc0c0f6foaokmf70.hop.clickbank.net">▶ Watch The Free Video Now →</a>
 </div>
-
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  var clickId = params.get('clickid');
+  if (!clickId) return;
+  document.querySelectorAll('a[href*="hop.clickbank.net"]').forEach(function(link) {
+    var url = new URL(link.href);
+    url.searchParams.set('tid', clickId);
+    link.href = url.toString();
+  });
+});
+</script>
 </body>
 </html>
